@@ -1,5 +1,6 @@
 import Navbar from '../components/Navbar'
 import { useState } from 'react'
+import HoloField from '../components/HoloField'
 
 export default function Contact() {
   const [sent, setSent] = useState(false)
@@ -23,15 +24,15 @@ export default function Contact() {
             <div className="grid md:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm text-slate-300 mb-1">Name</label>
-                <input required className="w-full bg-slate-900/70 border border-white/10 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" />
+                <HoloField required />
               </div>
               <div>
                 <label className="block text-sm text-slate-300 mb-1">Email</label>
-                <input type="email" required className="w-full bg-slate-900/70 border border-white/10 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" />
+                <HoloField type="email" required />
               </div>
               <div className="md:col-span-2">
                 <label className="block text-sm text-slate-300 mb-1">Message</label>
-                <textarea rows="5" required className="w-full bg-slate-900/70 border border-white/10 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-500/40" />
+                <HoloField as="textarea" rows="5" required />
               </div>
             </div>
             <button className="mt-4 px-5 py-2.5 rounded-lg bg-cyan-500/90 hover:bg-cyan-400 text-slate-900 font-semibold shadow-[0_0_20px_rgba(34,211,238,0.5)] transition">

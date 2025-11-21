@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import NeonSection from '../components/NeonSection'
 import { motion } from 'framer-motion'
+import CounterStat from '../components/CounterStat'
 
 const stats = [
   { label: 'Years Experience', value: 6 },
@@ -30,10 +31,8 @@ export default function Resume() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="p-6 text-center rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md"
             >
-              <div className="text-4xl font-extrabold text-cyan-300 drop-shadow-[0_0_20px_rgba(34,211,238,0.4)]">{s.value}</div>
-              <div className="mt-1 text-slate-300">{s.label}</div>
+              <CounterStat value={s.value} label={s.label} />
             </motion.div>
           ))}
         </div>

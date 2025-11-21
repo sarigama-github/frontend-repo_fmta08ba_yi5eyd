@@ -1,6 +1,7 @@
 import Navbar from '../components/Navbar'
 import NeonSection from '../components/NeonSection'
 import { motion } from 'framer-motion'
+import ThreeAvatar from '../components/ThreeAvatar'
 
 function TimelineItem({ year, title, desc }) {
   return (
@@ -26,9 +27,10 @@ export default function About() {
             <p className="mt-4 text-slate-300 text-lg">Full‑stack engineer obsessed with delightful UX and rigorous systems. I blend AI research with crypto‑native design to build products that feel like the future.</p>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className="justify-self-center">
-            <div className="relative w-64 h-64 rounded-2xl overflow-hidden bg-gradient-to-br from-fuchsia-600/30 to-cyan-500/30 border border-white/10 shadow-[0_0_40px_rgba(168,85,247,0.35)]">
-              <div className="absolute inset-0 animate-pulse bg-[radial-gradient(200px_circle_at_60%_40%,rgba(34,211,238,0.15),transparent_40%)]" />
-              <div className="absolute inset-2 rounded-xl bg-slate-900/60 flex items-center justify-center text-slate-200">3D Avatar</div>
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-fuchsia-600/30 to-cyan-500/30 border border-white/10 shadow-[0_0_40px_rgba(168,85,247,0.35)]">
+              <div className="absolute inset-0">
+                <ThreeAvatar className="w-full h-full" />
+              </div>
             </div>
           </motion.div>
         </div>

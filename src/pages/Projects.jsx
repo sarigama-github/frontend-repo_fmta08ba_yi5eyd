@@ -1,22 +1,26 @@
 import Navbar from '../components/Navbar'
 import NeonSection from '../components/NeonSection'
 import { motion } from 'framer-motion'
+import ThreeCardScene from '../components/ThreeCardScene'
 
 const projects = [
   {
     title: 'Agentic Crypto Copilot',
     stack: ['Next.js', 'FastAPI', 'LangChain', 'Supabase'],
-    blurb: 'Autonomous research, risk scoring, and execution with explainability.'
+    blurb: 'Autonomous research, risk scoring, and execution with explainability.',
+    colors: ['#22d3ee', '#a855f7']
   },
   {
     title: '3D Analytics Studio',
     stack: ['React', 'Three.js', 'WebGL'],
-    blurb: 'Rotating 3D charts with spatial filters and shader‑driven visuals.'
+    blurb: 'Rotating 3D charts with spatial filters and shader‑driven visuals.',
+    colors: ['#a78bfa', '#06b6d4']
   },
   {
     title: 'RAG Knowledge Hub',
     stack: ['React', 'Python', 'FAISS', 'OpenAI'],
-    blurb: 'Company brain with secure embeddings, chat, and dashboarding.'
+    blurb: 'Company brain with secure embeddings, chat, and dashboarding.',
+    colors: ['#06b6d4', '#f472b6']
   }
 ]
 
@@ -46,7 +50,9 @@ export default function Projects() {
               <div className="text-cyan-300 text-sm">{p.stack.join(' • ')}</div>
               <h3 className="text-xl font-semibold mt-1">{p.title}</h3>
               <p className="text-slate-300 mt-2">{p.blurb}</p>
-              <div className="mt-4 h-40 rounded-xl bg-gradient-to-br from-fuchsia-600/20 to-cyan-400/20 border border-white/10" />
+              <div className="mt-4 h-48 rounded-xl overflow-hidden border border-white/10">
+                <ThreeCardScene colorA={p.colors[0]} colorB={p.colors[1]} />
+              </div>
             </motion.div>
           ))}
         </div>
